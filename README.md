@@ -40,6 +40,8 @@ docker run -d \
   -e MONGO_INITDB_ROOT_USERNAME=admin \
   -e MONGO_INITDB_ROOT_PASSWORD=admin123 \
   mongo:7
+```
+---
 
 ## Create a .env file in the project root:
 
@@ -47,8 +49,12 @@ docker run -d \
 PORT=3000
 MONGO_URI=mongodb://admin:admin123@127.0.0.1:27017/banking?authSource=admin
 
+```
+---
+
 ## Run Application locally
 
 ```bash
 npm install
 npm run dev
+```
