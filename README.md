@@ -64,10 +64,8 @@ npm run dev
 ## Method: POST
 ```bash
 URL: http://localhost:3000/api/accounts
-```
 
-** Headers **
-```bash
+Headers
 Content-Type: application/json 
 
 ➤ Body → raw → JSON
@@ -76,7 +74,7 @@ Content-Type: application/json
   "holderName": "Sanjay Sah"
 }
 ```
-** expected output **
+## expected output
 ```bash
 ✅ Success Response (201)
 {
