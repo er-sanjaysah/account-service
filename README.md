@@ -58,3 +58,93 @@ MONGO_URI=mongodb://admin:admin123@127.0.0.1:27017/banking?authSource=admin
 npm install
 npm run dev
 ```
+---
+## To Test project USE POSTMAN
+
+## Method: POST
+```bash
+URL: http://localhost:3000/api/accounts
+```
+
+** Headers **
+```bash
+Content-Type: application/json 
+
+➤ Body → raw → JSON
+{
+  "accountNumber": "ACC1001",
+  "holderName": "Sanjay Sah"
+}
+```
+** expected output **
+```bash
+✅ Success Response (201)
+{
+  "_id": "65a1f...",
+  "accountNumber": "ACC1001",
+  "holderName": "Sanjay Sah",
+  "balance": 0,
+  "status": "ACTIVE",
+  "createdAt": "2025-01-26T...",
+  "updatedAt": "2025-01-26T..."
+}
+```
+---
+## GET Method, no body needed
+```bash
+http://localhost:3000/api/accounts/ACC1001
+```
+## you will get success response 200
+```bash
+{
+  "accountNumber": "ACC1001",
+  "holderName": "Sanjay Sah",
+  "balance": 0
+}
+```
+---
+
+## For deposite money to account 
+```bash
+http://localhost:3000/api/accounts/ACC1001/deposit
+
+headers
+Content-Type: application/json
+
+Body >> row >> json
+{
+  "amount": 5000
+}
+
+```
+
+## expected response
+```bash
+{
+  "accountNumber": "ACC1001",
+  "balance": 5000
+}
+
+```
+---
+## To withdraw money
+```bash
+http://localhost:3000/api/accounts/ACC1001/withdraw
+
+headers
+Content-Type: application/json
+
+Body >> row >> json
+{
+  "amount": 2000
+}
+```
+## expected response
+```bash
+{
+  "accountNumber": "ACC1001",
+  "balance": 3000
+}
+
+```
+---
